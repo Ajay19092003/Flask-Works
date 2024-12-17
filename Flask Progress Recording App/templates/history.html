@@ -1,0 +1,26 @@
+<!doctype html>
+<html>
+<head>
+    <title>History</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>History Page</h1>
+
+    <h2>Add New Entry</h2>
+    <form method="post">
+        <label for="entry">Entry:</label>
+        <input type="text" id="entry" name="entry" required>
+        <input type="submit" value="Add">
+    </form>
+
+    <h2>History Entries</h2>
+    <ul>
+        {% for entry in history %}
+            <li>{{ entry.timestamp.strftime('%Y-%m-%d %H:%M:%S') }} - {{ entry.entry }}</li>
+        {% endfor %}
+    </ul>
+
+    <a href="{{ url_for('index') }}">Back to Home</a>
+</body>
+</html>

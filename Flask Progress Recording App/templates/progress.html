@@ -1,0 +1,27 @@
+<!doctype html>
+<html>
+<head>
+    <title>Progress</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Progress Page</h1>
+    
+    <h2>Submit Progress</h2>
+    <form method="post">
+        <label for="progress">Progress Update:</label>
+        <input type="text" id="progress" name="progress" required>
+        <input type="submit" value="Submit">
+    </form>
+
+    <h2>Progress Updates</h2>
+    <ul>
+        {% for update in updates %}
+            <li>{{ update.timestamp.strftime('%Y-%m-%d %H:%M:%S') }} - {{ update.update }}</li>
+        {% endfor %}
+    </ul>
+    
+    <a href="{{ url_for('index') }}">Back to Home</a>
+</body>
+</html>
+

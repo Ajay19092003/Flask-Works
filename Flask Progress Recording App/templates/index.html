@@ -1,0 +1,18 @@
+<!doctype html>
+<html>
+<head>
+    <title>Home</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Welcome to the Homepage</h1>
+    <nav>
+        <ul>
+            <li><a href="{{ url_for('about') }}">About</a></li>
+            <li><a href="{{ url_for('progress') }}">Progress</a></li>
+            <li><a href="{{ url_for('history_page') }}">History</a></li>
+            <li><a href="{{ url_for('surveillance') }}">Surveillance</a></li>
+        </ul>
+    </nav>
+</body>
+</html>

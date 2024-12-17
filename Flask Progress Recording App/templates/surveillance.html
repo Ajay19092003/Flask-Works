@@ -1,0 +1,20 @@
+<!doctype html>
+<html>
+<head>
+    <title>Surveillance</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Surveillance Page</h1>
+    <p>Current timestamp: {{ timestamp.strftime('%Y-%m-%d %H:%M:%S') }}</p>
+
+    <h2>Example Data</h2>
+    <ul>
+        <li>Example Data Point 1</li>
+        <li>Example Data Point 2</li>
+        <li>Example Data Point 3</li>
+    </ul>
+
+    <a href="{{ url_for('index') }}">Back to Home</a>
+</body>
+</html>
